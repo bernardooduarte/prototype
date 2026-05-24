@@ -1,6 +1,6 @@
-package com.bernardoduarte.visitor;
+package com.bernardoduarte.prototype;
 
-public abstract class TaxaCambio {
+public class TaxaCambio implements Cloneable {
 
 	protected String moeda;
 	protected double valorEmReais;
@@ -32,5 +32,13 @@ public abstract class TaxaCambio {
 		return formatador.formatar(valorEmReais);
 	}
 
-	public abstract String aceitar(TaxaCambioVisitor visitor);
+	public TaxaCambio clonar() {
+		try {
+			return (TaxaCambio) super.clone();
+		} catch (CloneNotSupportedException exception) {
+			throw new IllegalStateException("Nao foi possivel clonar a taxa de cambio", exception);
+		}
+	}
 }
+
+
