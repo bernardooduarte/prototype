@@ -1,1 +1,1 @@
-# Padr�o Prototype    
+﻿# Padrão Prototype
